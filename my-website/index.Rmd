@@ -1,15 +1,22 @@
 ---
-title: "My Website"
-description: |
-  Welcome to the website. I hope you enjoy it!
-site: distill::distill_website
+title: "<hw4_p8105_wz2722"
+author: "wentao zhou"
+date: "2024-10-30"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+# This is WentaoZhou'swebsite
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+Hello everyone, my name is Zhou Wentao. This year is my first year as a graduate student majoring in MS at Columbia University. My major is Environmental Health Science. This is my first time studying a course related to Data Science, but I am very surprised by it. I think I really enjoy this course and my professor.
 
-```
+# Know more about me
 
+Welcome to my personal site! You can find my [Resume here] (Resume.html).
+
+#P8105 Problem 2.
+
+Here is  a [page](plotflex.html) with Create a flexdashboard to show my "NY NOAA Weather Dashboard"
