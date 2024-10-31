@@ -8,9 +8,117 @@ output:
     toc_float: true
     theme: cerulean
 ---
+
+```{r}
+library(distill)
+create_website(dir = "my-website", title = "My Website")
+
+
+```
+
+
 # This is Wentao's  website
 git clone https://github.com/Wentao-Zhou/hw4_p8105_wz2722.git
 
+ 
+
+Q2.Create a flexdashboard
+
+Here’s the code to create a flexdashboard with plotly using the NY NOAA dataset from the p8105.datasets package. This dashboard includes a scatter plot, a line plot, and a bar plot. You can filter or sample the data to improve performance.
 
 
+---
+title: "NY NOAA Weather Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: scroll
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+# Load necessary libraries
+library(flexdashboard)
+library(plotly)
+library(dplyr)
+library(lubridate)
+library(p8105.datasets)
+
+# Load the NY NOAA dataset and filter
+data("ny_noaa")
+
+# Filter and sample the data for reasonable performance
+set.seed(42)
+ny_noaa_sample <- ny_noaa %>%
+  filter(!is.na(tmax), !is.na(tmin), !is.na(prcp)) %>%
+  mutate(date = ymd(date),
+         year = year(date)) %>%
+  sample_n(5000)
+```
+
+
+Temperature Over Time (Scatter Plot)
+
+
+```{r}
+# Scatter plot: Maximum temperature over time
+plot_ly(ny_noaa_sample, 
+        x = ~date, 
+        y = ~tmax, 
+        type = 'scatter', 
+        mode = 'markers',
+        marker = list(color = 'red', size = 5)) %>%
+  layout(title = "Maximum Temperature Over Time",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Max Temperature (°C)"))
+
+```
+
+
+Average Temperature by Year (Line Plot)
+```{r}
+# Ensure tmax and tmin are numeric
+ny_noaa_sample <- ny_noaa_sample %>%
+  mutate(tmax = as.numeric(tmax),
+         tmin = as.numeric(tmin))
+
+# Line plot: Average temperature by year
+avg_temp_by_year <- ny_noaa_sample %>%
+  group_by(year) %>%
+  summarize(avg_temp = mean((tmax + tmin) / 2, na.rm = TRUE))
+
+# Plot the line plot
+plot_ly(avg_temp_by_year, 
+        x = ~year, 
+        y = ~avg_temp, 
+        type = 'scatter', 
+        mode = 'lines+markers') %>%
+  layout(title = "Average Temperature by Year",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Average Temperature (°C)"))
+
+```
+
+Precipitation by Year (Bar Plot)
+
+```{r}
+# Bar plot: Total precipitation by year
+total_precip_by_year <- ny_noaa_sample %>%
+  group_by(year) %>%
+  summarize(total_precip = sum(prcp, na.rm = TRUE))
+
+plot_ly(total_precip_by_year, 
+        x = ~year, 
+        y = ~total_precip, 
+        type = 'bar',
+        marker = list(color = 'blue')) %>%
+  layout(title = "Total Precipitation by Year",
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Total Precipitation (mm)"))
+
+```
+Code Explanation
+Scatter Plot: Visualizes maximum temperature over time.
+Line Plot: Shows the yearly average temperature.
+Bar Plot: Displays total precipitation for each year.
 

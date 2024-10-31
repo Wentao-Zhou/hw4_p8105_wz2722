@@ -1,7 +1,7 @@
 name: "my-website"
-title: "WentaoZhou's Website"
-description: My Website Hello everyone, my name is Zhou Wentao. This year is my first year as a graduate student majoring in MS at Columbia University. My major is Environmental Health Science. This is my first time studying a course related to Data Science, but I am very surprised by it. I think I really enjoy this course and my professor.
-
+title: "My Website"
+description: |
+  My Website
 output_dir: "_site"
 navbar:
   right:
