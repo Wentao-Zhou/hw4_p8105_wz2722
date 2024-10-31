@@ -1,0 +1,31 @@
+---
+title: "Resume"
+author: "wentao zhou"
+date: "2024-10-31"
+output: html_document
+---
+
+Generic resume
+Wentao Zhou  
+(267) 781-6078 – wz2722@cumc.columbia.edu 
+Education(finished)：
+Pennsylvania State University, University Park, PA Class of 2024 
+Agriculture Management
+
+GPA: 3.41/major GPA：3.64
+
+Related Course: 
+MIS 250: Management Information System (Learn how to use Excel for business)
+SCM 301: Supply Chain Management
+MGMT 301: Basic Management Concepts
+
+EXPERIENCE:
+Group leader of student group 1 of Baocheng Insurance Company August 2019
+1. Win the trust of team members through self-introduction and vote to become team leader
+2. Demonstrate drawing ability and assign corresponding tasks to each person, and require other team members to draw powerpoints together with statistical data.
+3. Report the task to the boss and show the group powerpoint and statistical chart
+
+
+SKILLS: 
+Effective Communication Skills
+Be able to use Word, PowerPoint, and Excel fluently.

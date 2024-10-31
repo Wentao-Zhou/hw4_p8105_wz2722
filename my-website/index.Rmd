@@ -15,7 +15,7 @@ Hello everyone, my name is Zhou Wentao. This year is my first year as a graduate
 
 # Know more about me
 
-Welcome to my personal site! You can find my [Resume here] (Resume.html).
+Welcome to my personal site! You can find my [Resume here](Resume.html).
 
 #P8105 Problem 2.
 
