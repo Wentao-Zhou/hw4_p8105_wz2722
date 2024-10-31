@@ -17,6 +17,6 @@ Hello everyone, my name is Zhou Wentao. This year is my first year as a graduate
 
 Welcome to my personal site! You can find my [Resume here](Resume.html).
 
-#P8105 Problem 2.
+# P8105 Problem 2
 
 Here is  a [page](plotflex.html) with Create a flexdashboard to show my "NY NOAA Weather Dashboard"
